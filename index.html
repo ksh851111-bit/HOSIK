@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>호식이 FC | 2026 월드컵 스코어 예측 이벤트</title>
+  <meta name="description" content="호식이 FC 2026 북중미 월드컵 대한민국 국가대표팀 조별리그 경기 스코어 맞추기 이벤트!">
+  <!-- Google Fonts: Outfit for numbers/headings, Inter for UI text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Confetti Canvas for celebration -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Stadium Ambient Background Glow -->
+  <div class="stadium-glow stadium-glow-left"></div>
+  <div class="stadium-glow stadium-glow-right"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="badge-worldcup">🏆 HOSIGI FC SPECIAL EVENT</span>
+        <h1>호식이 FC 월드컵 예언자</h1>
+        <p class="subtitle">2026 북중미 월드컵 대한민국 경기 스코어 맞추기 게임</p>
+      </div>
+      <!-- Countdown Widget -->
+      <div class="countdown-widget" id="countdown-widget">
+        <div class="dday-tag">체코전 개막 D-DAY</div>
+        <div class="timer-display">
+          <span id="dday-days">00</span>일 
+          <span id="dday-hours">00</span>시간 
+          <span id="dday-minutes">00</span>분 
+          <span id="dday-seconds">00</span>초
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-main">
+      <!-- HOSIGI FC WORLD CUP EVENT MAIN PANEL -->
+      <section id="tab-hosigi">
+        <div class="hosigi-welcome-banner glass-panel">
+          <div class="welcome-content">
+            <span class="welcome-badge">🎪 HOSIGI FC WORLD CUP FESTIVAL</span>
+            <h2>호식이 FC 2026 월드컵 스코어 예측 이벤트!</h2>
+            <p>대한민국 국가대표팀의 조별리그 3경기 스코어를 예측해 보세요. 경기가 끝난 후 실제 결과에 따라 포인트가 자동 채점되며, 호식이 FC 최고의 예측가를 가리는 실시간 랭킹 경쟁이 펼쳐집니다! 푸짐한 상품이 기다리고 있습니다! 🎁</p>
+          </div>
+          <div class="hosigi-logo-effect">
+            <span class="logo-emoji">⚽🏆</span>
+          </div>
+        </div>
+
+        <div class="grid-layout">
+          <!-- Column 1: Member Registration Form -->
+          <div class="prediction-column">
+            <div class="section-title">
+              <span class="accent-dot red"></span>
+              <h2>멤버 예측 등록하기</h2>
+              <span class="info-badge">이름과 3경기 예상 스코어를 입력하세요</span>
+            </div>
+
+            <div class="member-form-card glass-panel">
+              <div class="form-group">
+                <label for="member-name-input">👤 멤버 이름 (실명 또는 닉네임)</label>
+                <input type="text" id="member-name-input" placeholder="예: 김호식" maxlength="10">
+              </div>
+
+              <div class="event-matches-form">
+                <!-- Event Match 1 -->
+                <div class="event-match-form-row">
+                  <div class="em-meta">1차전 | 6월 12일(금) 오전 11:00 vs 체코</div>
+                  <div class="em-teams">
+                    <div class="em-team">
+                      <div class="flag flag-ko"></div>
+                      <span>대한민국</span>
+                    </div>
+                    <div class="em-score-select">
+                      <button class="em-btn minus" data-match="1" data-side="home">−</button>
+                      <span class="em-score-val" id="em-score-1-home">0</span>
+                      <button class="em-btn plus" data-match="1" data-side="home">+</button>
+                      <span class="em-colon">:</span>
+                      <button class="em-btn minus" data-match="1" data-side="away">−</button>
+                      <span class="em-score-val" id="em-score-1-away">0</span>
+                      <button class="em-btn plus" data-match="1" data-side="away">+</button>
+                    </div>
+                    <div class="em-team right-align">
+                      <span>체코</span>
+                      <div class="flag flag-cz"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Event Match 2 -->
+                <div class="event-match-form-row">
+                  <div class="em-meta">2차전 | 6월 19일(금) 오전 10:00 vs 멕시코</div>
+                  <div class="em-teams">
+                    <div class="em-team">
+                      <div class="flag flag-ko"></div>
+                      <span>대한민국</span>
+                    </div>
+                    <div class="em-score-select">
+                      <button class="em-btn minus" data-match="2" data-side="home">−</button>
+                      <span class="em-score-val" id="em-score-2-home">0</span>
+                      <button class="em-btn plus" data-match="2" data-side="home">+</button>
+                      <span class="em-colon">:</span>
+                      <button class="em-btn minus" data-match="2" data-side="away">−</button>
+                      <span class="em-score-val" id="em-score-2-away">0</span>
+                      <button class="em-btn plus" data-match="2" data-side="away">+</button>
+                    </div>
+                    <div class="em-team right-align">
+                      <span>멕시코</span>
+                      <div class="flag flag-mx"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Event Match 3 -->
+                <div class="event-match-form-row">
+                  <div class="em-meta">3차전 | 6월 25일(목) 오전 10:00 vs 남아공</div>
+                  <div class="em-teams">
+                    <div class="em-team">
+                      <div class="flag flag-ko"></div>
+                      <span>대한민국</span>
+                    </div>
+                    <div class="em-score-select">
+                      <button class="em-btn minus" data-match="3" data-side="home">−</button>
+                      <span class="em-score-val" id="em-score-3-home">0</span>
+                      <button class="em-btn plus" data-match="3" data-side="home">+</button>
+                      <span class="em-colon">:</span>
+                      <button class="em-btn minus" data-match="3" data-side="away">−</button>
+                      <span class="em-score-val" id="em-score-3-away">0</span>
+                      <button class="em-btn plus" data-match="3" data-side="away">+</button>
+                    </div>
+                    <div class="em-team right-align">
+                      <span>남아공</span>
+                      <div class="flag flag-za"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-full" id="btn-submit-prediction" style="margin-bottom: 0.6rem;">
+                🔮 나의 예측 등록하기 (이벤트 참여)
+              </button>
+              <button class="btn btn-kakao btn-full" id="btn-share-kakao">
+                💬 카톡으로 친구 초대하기
+              </button>
+            </div>
+
+            <!-- Event Rules Box -->
+            <div class="event-rules-card glass-panel">
+              <h3>📜 이벤트 스코어 채점 규칙</h3>
+              <ul>
+                <li>🎁 <strong>3경기 예측 성공 시</strong>: 5만원 상품권</li>
+                <li>🎁 <strong>2경기 예측 성공 시</strong>: 3만원 상품권</li>
+                <li>🎁 <strong>1경기 예측 성공 시</strong>: 1만원 상품권</li>
+                <li>💡 <em>참고: 홈팀/원정팀의 스코어를 정확히 맞춘 경기가 '예측 성공'으로 인정됩니다.</em></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Column 2: Leaderboard & Management -->
+          <div class="standings-column">
+            <div class="section-title">
+              <span class="accent-dot green"></span>
+              <h2>호식이 FC 실시간 예측표</h2>
+              <span class="info-badge" id="member-count-badge">참여자 0명</span>
+            </div>
+
+            <div class="leaderboard-card glass-panel">
+              <div class="table-responsive">
+                <table class="leaderboard-table" id="leaderboard-table">
+                  <thead>
+                    <tr>
+                      <th>이름</th>
+                      <th>체코전 예측</th>
+                      <th>멕시코전 예측</th>
+                      <th>남아공전 예측</th>
+                      <th>적중 경기 수</th>
+                      <th>획득 상품</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- JS will dynamically inject member rankings here -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Admin Results Controller Panel -->
+            <div class="admin-control-card glass-panel">
+              <div class="admin-header">
+                <h3>⚙️ 관리자 실제 경기 결과 입력란</h3>
+                <span class="admin-badge">ADMIN</span>
+              </div>
+              <p class="admin-desc">실제 경기 완료 후 결과를 입력해 주세요. 즉시 멤버들의 획득 포인트와 랭킹이 실시간으로 재계산됩니다.</p>
+              
+              <div class="admin-matches-inputs">
+                <div class="admin-match-row">
+                  <span>1차전 (체코전)</span>
+                  <div class="admin-score-inputs">
+                    <input type="number" id="actual-1-home" min="0" max="99" placeholder="-">
+                    <span class="colon">:</span>
+                    <input type="number" id="actual-1-away" min="0" max="99" placeholder="-">
+                  </div>
+                </div>
+
+                <div class="admin-match-row">
+                  <span>2차전 (멕시코전)</span>
+                  <div class="admin-score-inputs">
+                    <input type="number" id="actual-2-home" min="0" max="99" placeholder="-">
+                    <span class="colon">:</span>
+                    <input type="number" id="actual-2-away" min="0" max="99" placeholder="-">
+                  </div>
+                </div>
+
+                <div class="admin-match-row">
+                  <span>3차전 (남아공전)</span>
+                  <div class="admin-score-inputs">
+                    <input type="number" id="actual-3-home" min="0" max="99" placeholder="-">
+                    <span class="colon">:</span>
+                    <input type="number" id="actual-3-away" min="0" max="99" placeholder="-">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="admin-actions">
+                <button class="btn btn-secondary" id="btn-save-actual-scores">💾 결과 저장 & 랭킹 반영</button>
+                <button class="btn btn-secondary" id="btn-reset-actual-scores">🔄 결과 초기화</button>
+              </div>
+            </div>
+
+            <!-- Data Operations Panel -->
+            <div class="data-ops-card glass-panel">
+              <h3>💾 이벤트 데이터 백업 및 관리</h3>
+              <p class="data-desc">참가자 예측 데이터와 입력된 실제 경기 결과를 저장하거나 가져올 수 있습니다.</p>
+              <div class="data-buttons">
+                <button class="btn btn-secondary" id="btn-export-data">📤 데이터 내보내기 (JSON)</button>
+                <label class="btn btn-secondary" id="label-import-data">
+                  📥 데이터 가져오기
+                  <input type="file" id="input-import-data" accept=".json" class="hidden">
+                </label>
+                <button class="btn btn-secondary" id="btn-load-dummy-data">👥 테스트 멤버 불러오기</button>
+                <button class="btn btn-danger" id="btn-clear-all-data">🗑️ 전체 데이터 초기화</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>© 2026 호식이 FC 응원 위원회. 2026 월드컵 대한민국 경기 스코어 맞추기.</p>
+      <small>본 서비스는 2026 FIFA 북중미 월드컵 대한민국 경기 스코어 및 랭킹을 관리하는 호식이 FC 전용 이벤트 사이트입니다.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
